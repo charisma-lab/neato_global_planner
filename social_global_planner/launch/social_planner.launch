@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="world_file" value=" $(find nav_stack_homework3)/maps/stage/maze.world"/>
+  <arg name="map_file"  value="$(find nav_stack_homework3)/maps/maze.yaml"/>
+  <include file="$(find social_global_planner)/launch/turtlebot_in_stage.launch">
+     <arg name="world_file" value="$(arg world_file)"/>
+     <arg name="map_file"  value="$(arg map_file)"/>
+  </include>
+  
+  <!--  **************** Visualisation ****************  -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find social_global_planner)/rviz/social_planner.rviz"/>
+
+  
+</launch>
+
